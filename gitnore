@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Pytest (por si luego lo usas)
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Migrations (si luego usas alembic)
+alembic/versions/*.pyc
