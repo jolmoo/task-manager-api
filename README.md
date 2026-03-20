@@ -22,6 +22,7 @@ It uses **SQLAlchemy Core** (instead of the ORM) to keep full, explicit control 
 
 The application follows a **3-layer modular architecture**:
 
+<<<<<<< HEAD
 ```
 HTTP Request
      │
@@ -43,6 +44,13 @@ HTTP Request
        ▼
   PostgreSQL
 ```
+
+### 📊 Architecture Diagram
+
+![Architecture](diagram.png)
+
+### Layers Overview
+>>>>>>> 2e45471 (docs: add architecture diagram and improve README)
 
 | Layer | Responsibility |
 |-------|---------------|
