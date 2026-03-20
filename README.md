@@ -2,10 +2,10 @@
 
 > RESTful API built with **FastAPI** and **PostgreSQL**, focused on clean architecture and separation of concerns.
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=flat&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat\&logo=python\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat\&logo=fastapi\&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=flat\&logo=postgresql\&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-ready-2496ED?style=flat\&logo=docker\&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
 ---
@@ -22,7 +22,10 @@ It uses **SQLAlchemy Core** (instead of the ORM) to keep full, explicit control 
 
 The application follows a **3-layer modular architecture**:
 
-<<<<<<< HEAD
+### 📊 Architecture Diagram
+
+![Architecture](diagram.png)
+
 ```
 HTTP Request
      │
@@ -45,19 +48,14 @@ HTTP Request
   PostgreSQL
 ```
 
-### 📊 Architecture Diagram
-
-![Architecture](diagram.png)
-
 ### Layers Overview
->>>>>>> 2e45471 (docs: add architecture diagram and improve README)
 
-| Layer | Responsibility |
-|-------|---------------|
-| **Router** | HTTP handling, Pydantic validation, response formatting |
-| **Service** | Business rules, orchestration |
-| **Repository** | Data access, raw SQL with SQLAlchemy Core |
-| **Schemas** | Input/output DTOs via Pydantic v2 |
+| Layer          | Responsibility                                          |
+| -------------- | ------------------------------------------------------- |
+| **Router**     | HTTP handling, Pydantic validation, response formatting |
+| **Service**    | Business rules, orchestration                           |
+| **Repository** | Data access, raw SQL with SQLAlchemy Core               |
+| **Schemas**    | Input/output DTOs via Pydantic v2                       |
 
 ---
 
@@ -87,13 +85,13 @@ task-manager-api/
 
 ## 🛠️ Tech Stack
 
-| Technology | Role |
-|------------|------|
-| **FastAPI** | Web framework |
-| **PostgreSQL** | Relational database |
-| **SQLAlchemy Core** | SQL query execution (no ORM) |
-| **Pydantic v2** | Data validation and serialization |
-| **Docker** | Local infrastructure |
+| Technology          | Role                              |
+| ------------------- | --------------------------------- |
+| **FastAPI**         | Web framework                     |
+| **PostgreSQL**      | Relational database               |
+| **SQLAlchemy Core** | SQL query execution (no ORM)      |
+| **Pydantic v2**     | Data validation and serialization |
+| **Docker**          | Local infrastructure              |
 
 ---
 
@@ -101,14 +99,14 @@ task-manager-api/
 
 ### Tasks
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/tasks` | List all tasks (supports filters) |
-| `POST` | `/tasks` | Create a new task |
-| `GET` | `/tasks/{task_id}` | Get a task by ID |
-| `PUT` | `/tasks/{task_id}` | Update a task |
-| `DELETE` | `/tasks/{task_id}` | Delete a task |
-| `PATCH` | `/tasks/{task_id}/status` | Update task status |
+| Method   | Endpoint                  | Description                       |
+| -------- | ------------------------- | --------------------------------- |
+| `GET`    | `/tasks`                  | List all tasks (supports filters) |
+| `POST`   | `/tasks`                  | Create a new task                 |
+| `GET`    | `/tasks/{task_id}`        | Get a task by ID                  |
+| `PUT`    | `/tasks/{task_id}`        | Update a task                     |
+| `DELETE` | `/tasks/{task_id}`        | Delete a task                     |
+| `PATCH`  | `/tasks/{task_id}/status` | Update task status                |
 
 ### Filtering
 
@@ -134,6 +132,7 @@ pending | in_progress | done
 ### Create a task
 
 **Request:**
+
 ```http
 POST /tasks
 Content-Type: application/json
@@ -147,6 +146,7 @@ Content-Type: application/json
 ```
 
 **Response `201 Created`:**
+
 ```json
 {
   "id": 7,
@@ -163,11 +163,13 @@ Content-Type: application/json
 ### Update task status
 
 **Request:**
+
 ```http
 PATCH /tasks/7/status?status=done
 ```
 
 **Response `200 OK`:**
+
 ```json
 {
   "id": 7,
@@ -180,6 +182,7 @@ PATCH /tasks/7/status?status=done
 ### Task not found
 
 **Response `404 Not Found`:**
+
 ```json
 {
   "detail": "Task with id 7 not found"
@@ -192,8 +195,8 @@ PATCH /tasks/7/status?status=done
 
 ### Prerequisites
 
-- Python 3.11+
-- Docker & Docker Compose
+* Python 3.11+
+* Docker & Docker Compose
 
 ### 1. Clone the repository
 
@@ -235,12 +238,12 @@ Interactive docs (Swagger UI): `http://localhost:8000/docs`
 
 ## 📈 Roadmap
 
-- [ ] Authentication with JWT
-- [ ] Database migrations with Alembic
-- [ ] Pagination for task listing
-- [ ] Unit and integration tests (pytest)
-- [ ] Caching layer with Redis
-- [ ] CI/CD with GitHub Actions
+* [ ] Authentication with JWT
+* [ ] Database migrations with Alembic
+* [ ] Pagination for task listing
+* [ ] Unit and integration tests (pytest)
+* [ ] Caching layer with Redis
+* [ ] CI/CD with GitHub Actions
 
 ---
 
@@ -248,10 +251,8 @@ Interactive docs (Swagger UI): `http://localhost:8000/docs`
 
 This project was built to practice:
 
-- Backend architecture design (layered / clean)
-- Separation of concerns
-- Explicit SQL-based data access with SQLAlchemy Core
-- RESTful API design with FastAPI
-- Local infrastructure setup with Docker
-
----
+* Backend architecture design (layered / clean)
+* Separation of concerns
+* Explicit SQL-based data access with SQLAlchemy Core
+* RESTful API design with FastAPI
+* Local infrastructure setup with Docker
